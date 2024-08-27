@@ -7,9 +7,7 @@ RUN apt install -y apt-transport-https debian-archive-keyring debian-keyring \
   && curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list
 RUN apt-get update && apt-get install caddy -y
 RUN pecl install excimer
-RUN cp docker/envs/.env.postgres.prod /var/www/html/.env \
-  # general supervisord settings
-  && cp docker/conf/supervisor/supervisord.conf /etc/supervisor/supervisord.conf \
+RUN cp docker/conf/supervisor/supervisord.conf /etc/supervisor/supervisord.conf \
   #   supervisord services 
   && cp -r docker/conf/supervisor/services/* /etc/supervisor/custom.d \
   # caddy file for routing 
@@ -21,4 +19,5 @@ RUN cp docker/envs/.env.postgres.prod /var/www/html/.env \
 RUN composer self-update && composer install --no-scripts
 RUN chown -R devilbox:devilbox /var/www/
 
-CMD php docker/envs/envs.php && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+#CMD php docker/envs/envs.php && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+CMD ["sh", "./startup.sh"]
