@@ -5,8 +5,8 @@ require realpath(__DIR__ . '/../../vendor/autoload.php');
 
 $env_path = realpath(__DIR__ . '/../../.env');
 
-$dotenv = Dotenv\Dotenv::createMutable(dirname($env_path));
-$dotenv->load();
+// $dotenv = Dotenv\Dotenv::createMutable(dirname($env_path));
+// $dotenv->load();
 
 function set_env(string $key, string $prev_value, string $new_value, string $env_path)
 {
