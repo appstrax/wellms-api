@@ -7,8 +7,10 @@ RUN apt install -y apt-transport-https debian-archive-keyring debian-keyring \
   && curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | tee /etc/apt/sources.list.d/caddy-stable.list
 RUN apt-get update && apt-get install caddy -y
 RUN pecl install excimer
-RUN cp docker/conf/supervisor/supervisord.conf /etc/supervisor/supervisord.conf \
-  #   supervisord services 
+RUN cp docker/envs/.env.postgres.prod /var/www/html/.env \
+  # general supervisord settings
+  && cp docker/conf/supervisor/supervisord.conf /etc/supervisor/supervisord.conf \
+  # supervisord services 
   && cp -r docker/conf/supervisor/services/* /etc/supervisor/custom.d \
   # caddy file for routing 
   && cp docker/conf/caddy/Caddyfile /etc/caddy/Caddyfile \
