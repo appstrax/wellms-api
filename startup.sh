@@ -11,6 +11,8 @@ mkdir -p ${APP_STORAGE_PATH}/storage/app
 
 # Set the permissions
 chmod -R 755 ${APP_STORAGE_PATH}/storage/framework 
+chmod -R 755 ${APP_STORAGE_PATH}/storage/framework/views
+chmod -R 755 ${APP_STORAGE_PATH}/storage/framework/cache
 chmod -R 755 ${APP_STORAGE_PATH}/storage/app 
 chmod -R 755 ${APP_STORAGE_PATH}/storage/logs 
 
