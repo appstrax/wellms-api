@@ -15,6 +15,12 @@ chmod -R 755 ${APP_STORAGE_PATH}/storage/framework/views
 chmod -R 755 ${APP_STORAGE_PATH}/storage/framework/cache
 chmod -R 755 ${APP_STORAGE_PATH}/storage/app 
 chmod -R 755 ${APP_STORAGE_PATH}/storage/logs 
+chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p 
+chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/temp
+chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/libraries
+chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/editor
+chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/editor/images
+chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/cachedassets
 
 FILE=${APP_STORAGE_PATH}/storage/oauth-private.key
 if [ -f "$FILE" ]; then
@@ -26,4 +32,4 @@ else
     php artisan passport:client --personal --no-interaction
 fi
 
-php artisan clear-compiled && php artisan optimize:clear && php artisan config:cache && php artisan config:clear && php artisan view:clear && php artisan cache:clear && php artisan migrate --force && php artisan storage:link && php docker/envs/envs.php && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+php artisan clear-compiled && php artisan optimize:clear && php artisan config:cache && php artisan config:clear && php artisan view:clear && php artisan cache:clear && php artisan migrate --force && php artisan storage:link && php artisan h5p:storage-link && php docker/envs/envs.php && /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
