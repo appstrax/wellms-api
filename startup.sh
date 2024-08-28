@@ -8,6 +8,8 @@ mkdir -p ${APP_STORAGE_PATH}/storage/framework/views
 mkdir -p ${APP_STORAGE_PATH}/storage/framework/cache
 mkdir -p ${APP_STORAGE_PATH}/storage/logs
 mkdir -p ${APP_STORAGE_PATH}/storage/app
+mkdir -p ${APP_STORAGE_PATH}/storage/app/public
+mkdir -p ${APP_STORAGE_PATH}/storage/app/public/imgcache
 
 mkdir -p ${APP_STORAGE_PATH}/storage/h5p 
 mkdir -p ${APP_STORAGE_PATH}/storage/h5p/temp
@@ -41,6 +43,8 @@ chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/libraries
 chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/editor
 chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/editor/images
 chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/cachedassets
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app/public
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app/public/imgcache
 
 FILE=${APP_STORAGE_PATH}/storage/oauth-private.key
 if [ -f "$FILE" ]; then
