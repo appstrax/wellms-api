@@ -9,18 +9,38 @@ mkdir -p ${APP_STORAGE_PATH}/storage/framework/cache
 mkdir -p ${APP_STORAGE_PATH}/storage/logs
 mkdir -p ${APP_STORAGE_PATH}/storage/app
 
+mkdir -p ${APP_STORAGE_PATH}/storage/h5p 
+mkdir -p ${APP_STORAGE_PATH}/storage/h5p/temp
+mkdir -p ${APP_STORAGE_PATH}/storage/h5p/libraries
+mkdir -p ${APP_STORAGE_PATH}/storage/h5p/editor
+mkdir -p ${APP_STORAGE_PATH}/storage/h5p/editor/images
+mkdir -p ${APP_STORAGE_PATH}/storage/h5p/cachedassets
+
+mkdir -p ${APP_STORAGE_PATH}/storage/app/h5p 
+mkdir -p ${APP_STORAGE_PATH}/storage/app/h5p/temp
+mkdir -p ${APP_STORAGE_PATH}/storage/app/h5p/libraries
+mkdir -p ${APP_STORAGE_PATH}/storage/app/h5p/editor
+mkdir -p ${APP_STORAGE_PATH}/storage/app/h5p/editor/images
+mkdir -p ${APP_STORAGE_PATH}/storage/app/h5p/cachedassets
+
 # Set the permissions
-chmod -R 755 ${APP_STORAGE_PATH}/storage/framework 
-chmod -R 755 ${APP_STORAGE_PATH}/storage/framework/views
-chmod -R 755 ${APP_STORAGE_PATH}/storage/framework/cache
-chmod -R 755 ${APP_STORAGE_PATH}/storage/app 
-chmod -R 755 ${APP_STORAGE_PATH}/storage/logs 
-chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p 
-chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/temp
-chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/libraries
-chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/editor
-chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/editor/images
-chmod -R 755 ${APP_STORAGE_PATH}/storage/h5p/cachedassets
+chmod -R 777 ${APP_STORAGE_PATH}/storage/framework 
+chmod -R 777 ${APP_STORAGE_PATH}/storage/framework/views
+chmod -R 777 ${APP_STORAGE_PATH}/storage/framework/cache
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app 
+chmod -R 777 ${APP_STORAGE_PATH}/storage/logs 
+chmod -R 777 ${APP_STORAGE_PATH}/storage/h5p 
+chmod -R 777 ${APP_STORAGE_PATH}/storage/h5p/temp
+chmod -R 777 ${APP_STORAGE_PATH}/storage/h5p/libraries
+chmod -R 777 ${APP_STORAGE_PATH}/storage/h5p/editor
+chmod -R 777 ${APP_STORAGE_PATH}/storage/h5p/editor/images
+chmod -R 777 ${APP_STORAGE_PATH}/storage/h5p/cachedassets
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p 
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/temp
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/libraries
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/editor
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/editor/images
+chmod -R 777 ${APP_STORAGE_PATH}/storage/app/h5p/cachedassets
 
 FILE=${APP_STORAGE_PATH}/storage/oauth-private.key
 if [ -f "$FILE" ]; then
